@@ -5,7 +5,18 @@ import { GamePattern } from '../Components/GamePattern';
 import EndScreen from "../Components/EndScreen.js";
 
 function App() {
+  //box index
+  const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
+
+  //player turn
+  const [player, setPlayer] = useState("💛");
+
+  //result
+  const [result, setResult] = useState({ winner: "none", state: "none" });
   
+  //check win
+  const [winned, setWin] = useState(false);
+
   return (
     <div className="App">
       <h3 className="logo">🚀GeniusCrew</h3>

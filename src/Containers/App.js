@@ -7,16 +7,20 @@ import EndScreen from "../Components/EndScreen.js";
 // Game sound initialize and function
   //game sound functions
   //audio files hosted online
+
+  //Sound for clicking on boxes
   const clickPlay = () => {
     const click = new Audio("http://codeskulptor-demos.commondatastorage.googleapis.com/pang/pop.mp3");
     click.play();
   }
 
+  //Sound at end of game
   const gameEnder = () => {
     const gameEnderSound = new Audio('http://commondatastorage.googleapis.com/codeskulptor-assets/week7-brrring.m4a');
     gameEnderSound.play();
   }
 
+  //Sound on restarting game
   const gameRestart = () => {
     const restartSound = new Audio('https://rpg.hamsterrepublic.com/wiki-images/2/21/Collision8-Bit.ogg');
     restartSound.play();
@@ -112,6 +116,7 @@ function App() {
     setWin(false);
   };
 
+  //Created 3 rows of 3 boxes each, inside the board container
   return (
     <div className="App">
       <h3 className="logo">🚀GeniusCrew</h3>

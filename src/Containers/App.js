@@ -13,9 +13,82 @@ function App() {
 
   //result
   const [result, setResult] = useState({ winner: "none", state: "none" });
-  
+
   //check win
   const [winned, setWin] = useState(false);
+
+  //Functionality to toggle between players
+  useEffect(() => {
+    if (player === "❌") {
+      setPlayer("💛");
+    } else {
+      setPlayer("❌");
+    }
+
+    //Function to check winners
+    const checkWin = () => {
+      GamePattern.forEach((currPattern) => {
+        const firstPlayer = board[currPattern[0]];
+        if (firstPlayer === "") return;
+        let foundWinningPattern = true;
+        currPattern.forEach((id) => {
+          if (board[id] !== firstPlayer) {
+            foundWinningPattern = false;
+          }
+        });
+  
+        if (foundWinningPattern) {
+          setResult({ winner: player, state: "Won" });
+        }
+      });
+    };
+
+    checkWin();
+
+    //Function to check for tie
+    const checkIfTie = () => {
+      let filled = true;
+      board.forEach((box) => {
+        if (box === "") {
+          filled = false;
+        }
+      });
+  
+      if (filled) {
+        setResult({ winner: "No One", state: "Tie" });
+      }
+    };
+
+    checkIfTie();
+
+  }, [board]);
+
+  //render winner
+  useEffect(() => {
+    if (result.state !== "none") {
+      setWin(true);
+    }
+  }, [result]);
+
+
+  //handling event of click on box
+  const handleClick = (box) => {
+    setBoard(
+      board.map((val, id) => {
+        if (id === box && val === "") {
+          return player;
+        }
+        return val;
+      })
+    );
+  }
+
+  //restart game after win or tie
+  const restartGame = () => {
+    setBoard(["", "", "", "", "", "", "", "", ""]);
+    setPlayer("💛");
+    setWin(false);
+  };
 
   return (
     <div className="App">

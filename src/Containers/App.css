@@ -120,3 +120,44 @@ p{
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
+
+.winner {
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+div.end-text {
+  color: #00ffff;
+  font-size: 2.5rem;
+  text-shadow: 0 0 5px #006d6d;
+}
+
+button {
+  color: #314094;
+  border: none;
+  padding: 0.6em 1.5em;
+  border-radius: 16px;
+  background: #dadffc;
+  box-shadow: 0 0 10px #333;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+}
+
+button:hover, button:active {
+  background: #fff;
+  cursor: pointer;
+  transform: scale(1.02);
+  transition: all ease-in-out 0.4s;
+}
+
+
+

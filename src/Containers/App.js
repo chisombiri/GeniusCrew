@@ -4,6 +4,24 @@ import Box from '../Components/Box.js';
 import { GamePattern } from '../Components/GamePattern';
 import EndScreen from "../Components/EndScreen.js";
 
+// Game sound initialize and function
+  //game sound functions
+  //audio files hosted online
+  const clickPlay = () => {
+    const click = new Audio("http://codeskulptor-demos.commondatastorage.googleapis.com/pang/pop.mp3");
+    click.play();
+  }
+
+  const gameEnder = () => {
+    const gameEnderSound = new Audio('http://commondatastorage.googleapis.com/codeskulptor-assets/week7-brrring.m4a');
+    gameEnderSound.play();
+  }
+
+  const gameRestart = () => {
+    const restartSound = new Audio('https://rpg.hamsterrepublic.com/wiki-images/2/21/Collision8-Bit.ogg');
+    restartSound.play();
+  }
+
 function App() {
   //box index
   const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
@@ -67,12 +85,15 @@ function App() {
   useEffect(() => {
     if (result.state !== "none") {
       setWin(true);
+      gameEnder(); 
     }
   }, [result]);
 
 
   //handling event of click on box
   const handleClick = (box) => {
+    clickPlay();
+  
     setBoard(
       board.map((val, id) => {
         if (id === box && val === "") {
@@ -85,6 +106,7 @@ function App() {
 
   //restart game after win or tie
   const restartGame = () => {
+    gameRestart();
     setBoard(["", "", "", "", "", "", "", "", ""]);
     setPlayer("💛");
     setWin(false);

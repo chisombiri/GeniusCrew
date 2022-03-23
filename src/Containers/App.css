@@ -159,5 +159,82 @@ button:hover, button:active {
   transition: all ease-in-out 0.4s;
 }
 
+/* Mobile responsive view */
 
+@media (max-width:600px) {
+  .App{
+    justify-content: center;
+  }
+
+  .board {
+    transform: rotateX(8deg);
+    width: 340px;
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    color: #00ffff;
+    text-shadow: 0 0 8px #222;
+  }
+
+  .creator{
+    position: static;
+    bottom: 0.6em;
+    text-align: center;
+    margin-top: 4em;
+  }
+
+  h2.end-text {
+    font-size: 1.8rem;
+  }
+
+  button {
+    padding: 0.8em 1.5em;
+    border-radius: 16px;
+    font-size: 1.1em;
+  }
+}
+
+/* Tab responsive view */
+
+@media (max-width:1000px) and (min-width:620px) {
+  .App{
+    justify-content: center;
+  }
+
+  .board {
+    width: 400px;
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 2em;
+    color: #00ffff;
+    text-shadow: 0 0 8px #222;
+  }
+
+  .creator{
+    position: static;
+    bottom: 0.6em;
+    text-align: center;
+    margin-top: 4em;
+  }
+
+  h2.end-text {
+    font-size: 1.8em;
+  }
+
+  button {
+    padding: 0.8em 1.5em;
+    border-radius: 16px;
+    font-size: 1.1em;
+  }
+}
 

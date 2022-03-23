@@ -1,7 +1,7 @@
 import React from 'react'
 
+//Component for screen at the end of game
 //Functional component used instead of class
-
 function EndScreen({ restartGame, playerWon }) {
     return (
         <div className='winner'>

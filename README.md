@@ -5,3 +5,5 @@ rather than the steady virtual lives we live these days. This is a better way to
 share your phone or pc while enjoying a game with them!
 
 Link to design file here, designed by me: https://www.figma.com/file/1g7TmILCbxrrB58WZZC0Ai/GeniusCrew-Tic-Tac-Toe?node-id=0%3A1
+
+The web app is live here: https://chisombiri-genius-crew.netlify.app/
